@@ -1,4 +1,4 @@
-// 5. Longest Palindromic Substring
+// 5. Longest Palindrome Substring
 // Решение с ютуб канала : Front-end Science с Сергеем Пузанковым
 // Сложность алгоритма:
 // O(n^2), но с O(1) по памяти
