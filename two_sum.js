@@ -1,5 +1,6 @@
 // 1 варик
-// input [2,7,11,14] target = 9
+// input: [2,7,11,14] target = 9
+// otput: [0, 1] - index
 const twoSum = (arr, target) => {
    let res = [];
    for (let i = 0; i < arr.length; i++) {
@@ -11,4 +12,3 @@ const twoSum = (arr, target) => {
    }
    return res[i, j]
 }
-console.log(twoSum([3,5,12,15], 17)); // [1,2] - инесы 2х чисел
