@@ -10,7 +10,9 @@
 // Example 3:
 // Input: head = [7,7,7,7], val = 7
 // Output: []
-
+//
+//* по памяти - константа O(1) дополнительную памть не выделяем
+//* сложность алгоритма O(n)
 const removeElements = (head, val) => {
      let dummyNode = new ListNode(-1, head)
      let cur = dummyNode;
