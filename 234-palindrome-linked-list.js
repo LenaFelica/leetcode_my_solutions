@@ -26,3 +26,48 @@ const isPalindrome = (head) => {
    }
    return true;
 }
+
+//
+//! Optimal solution
+//* first - find midpoint
+//* second - reerse tail (начиная с середины, перевернуть вторую половину)
+//* third - return compare(head, tail) - сравним первую половину списка с перевернутой половиной
+//* Линейна временная сложность
+//* Константа пространственная сложность (зависимость количества занимаемой памяти от входных данных):
+//
+const findMidpoint = (head) => {
+      let slow = head;
+      let fast = head;
+      while(fast && fast.next) {
+         let slow = slow.next;
+         let fast = fast.next.next;
+      }
+   return slow;
+}
+
+const reverse = (head) => {
+   let prev = null;
+   let cur = head;
+   while(cur) {
+      const next = cur.next;
+      cur.next = prev;
+      prev = cur;
+      cur = next; 
+   }
+   return prev;
+}
+
+const compare = (list1, list2) => {
+   while(list1 && list2) {
+       if(list1.val !== list2.val ) return false;
+         list1 = list1.next;
+         list2 = list2.next;  
+   }
+   return true;
+}
+
+const iPalindromOpt = (head) => {
+   const midpoint = findMidpoint(head);
+   const tail = reverse(midpoint);
+   return compare(head, tail)
+}
